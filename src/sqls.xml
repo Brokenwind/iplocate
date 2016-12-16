@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array id="createSql">
+    <item id="ipAddress">
+      CREATE TABLE IF NOT EXISTS `ipAddress` (
+      `ip` varchar(255) NOT NULL,
+      `address` varchar(255) NOT NULL,
+      `province` varchar(255) NULL,
+      `city` varchar(255) NULL,
+      `district` varchar(255) NULL,
+      `street` varchar(255) NULL,
+      `street_number` varchar(255) NULL,
+      `longitude` decimal(18,13)  NULL,
+      `latitude` decimal(18,13) NULL,
+      PRIMARY KEY (`ip`) 
+      );
+    </item>
+  </string-array>
+
+  <string-array id="dropSql">
+    <item id="ipAddress">
+        DROP TABLE IF EXISTS ipAddress;
+    </item>
+  </string-array>
+
+  <string-array id="cleanSql">
+    <item id="ipAddress">
+        DELETE FROM ipAddress;
+    </item>
+  </string-array>
+
+  <string-array id="insertSql">
+    <item id="ipAddress">
+      INSERT INTO ipAddress(ip,address,province,city,district,street,street_number,longitude,latitude) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
+    </item>
+
+  </string-array>
+
+</resources>
